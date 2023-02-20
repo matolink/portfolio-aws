@@ -1,23 +1,13 @@
-import goarte from './goarte-logo.png';
-import './App.css';
-
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing"
+import Login from "./pages/Login"
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={goarte} className="App-logo" alt="logo" />
-        <p>
-          Web en desarrollo.
-        </p>
-        <a
-          className="App-link"
-          href="https://www.instagram.com/goarte.estampados"
-        >
-          Visita nuestro Instagram!
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path = "/sharyworld" element={<Login />} />
+        <Route index element={<Landing />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
