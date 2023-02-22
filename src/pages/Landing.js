@@ -1,19 +1,35 @@
-import goarte from "../goarte-logo.png";
+import Hero from "../components/Hero"
+import Header from "../components/Header"
+import Section from "../components/Section"
+import Footer from "../components/Footer"
+import AboutUs from "../components/AboutUs"
+//import '@fontsource/roboto/300.css';
+//import '@fontsource/roboto/400.css';
+//import '@fontsource/roboto/500.css';
+//import '@fontsource/roboto/700.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import { createTheme, ThemeProvider} from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Poppins',
+      'sans-serif',
+    ].join(','),
+  },});
 
 function Landing() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={goarte} className="App-logo" alt="logo" />
-        <p>web en desarrollo.</p>
-        <a
-          className="App-link"
-          href="https://www.instagram.com/goarte.estampados"
-        >
-          visita nuestro Instagram!
-        </a>
-      </header>
-    </div>
+    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Header />
+      <Hero />
+      <AboutUs />
+      <Footer />
+      </ThemeProvider>
+    </>
+
   );
 }
 
